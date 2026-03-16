@@ -279,8 +279,9 @@ function exportToCanvas(frase, premium) {
   canvas.height = H;
   const ctx = canvas.getContext('2d');
 
-  function wrapText(text, fontSize, weight) {
-    ctx.font = `${weight} ${fontSize}px ${FONT}`;
+  function wrapText(text, fontSize, weight, italic) {
+    const italicStr = italic ? 'italic ' : '';
+    ctx.font = `${italicStr}${weight} ${fontSize}px ${FONT}`;
     const words = text.split(' ');
     const rows  = [];
     let current = '';
@@ -325,15 +326,15 @@ function exportToCanvas(frase, premium) {
   /* ── Calcular linhas para centralizar verticalmente ── */
   const rawLines   = frase.text.split('\n').map(l => l.trim()).filter(Boolean);
   const lineStyles = [
-    { size: 62, weight: 'bold', color: '#6B5510', gap: 36 },
-    { size: 50, weight: '400',  color: '#4A5568', gap: 32 },
-    { size: 54, weight: '700',  color: '#1A1A2E', gap: 0  },
+    { size: 64, weight: 'bold',   color: '#B8972A', gap: 40, italic: false },
+    { size: 48, weight: '400',    color: '#6B7280', gap: 36, italic: false },
+    { size: 54, weight: 'bold',   color: '#1A1A2E', gap: 0,  italic: true  },
   ];
 
   const allRows = [];
   rawLines.forEach((line, i) => {
     const st   = lineStyles[i] || lineStyles[2];
-    const rows = wrapText(line, st.size, st.weight);
+    const rows = wrapText(line, st.size, st.weight, st.italic);
     rows.forEach((row, ri) => {
       allRows.push({ text: row, style: st, isLast: ri === rows.length - 1 });
     });
@@ -353,7 +354,8 @@ function exportToCanvas(frase, premium) {
 
   /* ── Renderizar linhas ── */
   allRows.forEach((r, idx) => {
-    ctx.font      = `${r.style.weight} ${r.style.size}px ${FONT}`;
+    const italic = r.style.italic ? 'italic ' : '';
+    ctx.font      = `${italic}${r.style.weight} ${r.style.size}px ${FONT}`;
     ctx.fillStyle = r.style.color;
     ctx.textAlign = 'center';
     ctx.fillText(r.text, W / 2, y);
