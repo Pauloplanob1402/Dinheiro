@@ -6,26 +6,20 @@
   <meta name="theme-color" content="#B8972A" />
   <meta name="description" content="Frases de finanças em 3 linhas. Prosperidade, riqueza e mentalidade financeira." />
 
-  <!-- PWA Meta Tags -->
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Sparks Dinheiro" />
 
-  <!-- Manifest -->
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-6266100736640555"
      crossorigin="anonymous"></script>
 
@@ -33,12 +27,9 @@
 </head>
 <body>
 
-  <!-- ════════════════════════════════════════
-       TELA 1: BOAS-VINDAS (Onboarding)
-       ════════════════════════════════════════ -->
   <div id="screen-welcome" style="display:none;">
     <div class="welcome-logo">
-      <img src="icons/spks-welcome.png" alt="SPKS" class="welcome-logo-img" />
+      <img src="spks-welcome.png" alt="SPKS" class="welcome-logo-img" />
       <h1 class="welcome-title">Sparks Dinheiro</h1>
       <p class="welcome-subtitle">Prosperidade começa na mente.</p>
     </div>
@@ -59,31 +50,22 @@
   </div>
 
 
-  <!-- ════════════════════════════════════════
-       TELA 2: APP PRINCIPAL
-       ════════════════════════════════════════ -->
   <div id="screen-app" style="display:none;">
     <div id="app">
 
-      <!-- ── Cabeçalho ── -->
       <header class="app-header">
         <div class="app-logo">
           <span class="app-logo-text">SPKS</span>
         </div>
       </header>
 
-      <!-- ── Saudação ── -->
       <div class="greeting">
         <p class="greeting-text">Seu foco do dia</p>
         <p class="greeting-name" id="greeting-name">Foco total.</p>
       </div>
 
-      <!-- ══════════════════════════════
-           VIEW: HOME
-           ══════════════════════════════ -->
       <div id="home-section" style="display:contents;">
 
-        <!-- ── Card da Frase ── -->
         <div class="card">
           <p class="spark-id" id="spark-id">#001 de 390</p>
 
@@ -91,7 +73,6 @@
             <span class="line">Carregando spark...</span>
           </div>
 
-          <!-- Ações do card -->
           <div class="card-actions">
             <button id="btn-fav" class="btn btn-fav" title="Favoritar" aria-label="Favoritar esta frase">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -133,7 +114,6 @@
           </button>
         </div>
 
-        <!-- ── Anúncios ── -->
         <div id="ads-container" class="ads-container">
           <span class="ads-label">Publicidade</span>
           <div class="ads-placeholder">
@@ -146,7 +126,6 @@
           </div>
         </div>
 
-        <!-- ── Banner Premium ── -->
         <div id="premium-banner" class="premium-banner">
           <div class="premium-banner-text">
             <p class="premium-banner-title">✨ Sparks Premium</p>
@@ -155,12 +134,9 @@
           <button id="btn-banner-premium" class="btn-premium">Ver plano</button>
         </div>
 
-      </div><!-- /home-section -->
+      </div>
 
 
-      <!-- ══════════════════════════════
-           VIEW: FAVORITOS
-           ══════════════════════════════ -->
       <div id="favorites-section" class="favorites-section">
         <div class="favorites-header">
           <h2 class="favorites-title">⭐ Meus Favoritos</h2>
@@ -170,7 +146,6 @@
       </div>
 
 
-      <!-- ── Navegação inferior ── -->
       <nav class="bottom-nav" role="navigation" aria-label="Navegação principal">
         <button id="nav-home" class="nav-btn active" aria-label="Início" aria-current="page">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -203,9 +178,6 @@
   </div>
 
 
-  <!-- ════════════════════════════════════════
-       MODAL PREMIUM
-       ════════════════════════════════════════ -->
   <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal modal-inner">
 
